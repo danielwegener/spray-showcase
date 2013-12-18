@@ -112,7 +112,7 @@ module.exports = function(grunt) {
 				tasks: 'themes'
 			},
             html: {
-                files: [ 'index.html']
+                files: [ 'index.html', '*.md' ]
             }
 		}
 
