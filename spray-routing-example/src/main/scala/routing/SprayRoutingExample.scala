@@ -3,7 +3,7 @@ package routing
 import spray.routing._
 import spray.http._
 import spray.can._
-import akka.actor.{ActorLogging, Props, ActorSystem}
+import akka.actor.{ ActorLogging, Props, ActorSystem }
 import akka.io.IO
 
 object SprayRoutingExample extends App {

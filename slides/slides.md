@@ -41,6 +41,14 @@ Spray is
 
 <!-- click -->
 
+### spray-can
+
+* Provides akka-io extension for HTTP
+* Abstracts raw ByteString events to
+
+<!-- click -->
+
+
 ### spray-http
 
 * immutable DSL over the HTTP protocol
@@ -81,7 +89,7 @@ Spray is
 
 ### Directives are shapeless
 
-```
+```scala
 package spray
 
 import shapeless._
