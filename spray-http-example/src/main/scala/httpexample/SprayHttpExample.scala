@@ -1,12 +1,10 @@
-package com.example
+package httpexample
 
-import akka.actor.{ActorLogging, Props, ActorSystem, Actor}
-import spray.routing._
+
 import spray.http._
-import MediaTypes._
+import spray.can._
+import akka.actor.{Actor, ActorLogging, Props, ActorSystem}
 import akka.io.IO
-import spray.can.Http
-import akka.io.Tcp.ConnectionClosed
 
 object SprayHttpExample extends App {
 
@@ -14,7 +12,7 @@ object SprayHttpExample extends App {
   implicit val system = ActorSystem("spray-http-example")
 
   // create and start our service actor
-  val httpActor = system.actorOf(Props[MyRoutingActor])
+  val httpActor = system.actorOf(Props[MyHttpActor])
 
   // start a new HTTP server on port 8080 with our service actor as the handler
   IO(Http) ! Http.Bind(httpActor, interface = "localhost", port = 8080)

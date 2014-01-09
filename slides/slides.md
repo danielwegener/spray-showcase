@@ -78,6 +78,9 @@ Spray is
 * Directives
 
 <!-- click -->
+
+### Directives are shapeless
+
 ```
 package spray
 

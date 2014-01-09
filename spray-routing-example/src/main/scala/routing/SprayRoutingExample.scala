@@ -1,12 +1,10 @@
-package com.example
+package routing
 
-import akka.actor.{ActorLogging, Props, ActorSystem, Actor}
 import spray.routing._
 import spray.http._
-import MediaTypes._
+import spray.can._
+import akka.actor.{ActorLogging, Props, ActorSystem}
 import akka.io.IO
-import spray.can.Http
-import akka.io.Tcp.ConnectionClosed
 
 object SprayRoutingExample extends App {
 

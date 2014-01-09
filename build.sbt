@@ -1,10 +1,10 @@
-name := "examples"
+name := "spray-showcase"
 
 version := "0.1"
 
 scalaVersion := "2.10.3"
 
-libraryDependencies ++= {
+libraryDependencies in ThisBuild ++= {
   val akkaV = "2.2.3"
   val sprayV = "1.2.0"
   Seq(
@@ -17,5 +17,7 @@ libraryDependencies ++= {
   )
 }
 
-lazy val spray-http-example = project
-lazy val spray-route-example = project
+
+lazy val `spray-http-example` = project
+
+lazy val `spray-routing-example` = project
