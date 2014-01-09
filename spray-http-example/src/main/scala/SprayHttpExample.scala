@@ -8,13 +8,13 @@ import akka.io.IO
 import spray.can.Http
 import akka.io.Tcp.ConnectionClosed
 
-object Boot extends App {
+object SprayHttpExample extends App {
 
   // we need an ActorSystem to host our application in
   implicit val system = ActorSystem("spray-http-example")
 
   // create and start our service actor
-  val httpActor = system.actorOf(Props[MyHttpActor])
+  val httpActor = system.actorOf(Props[MyRoutingActor])
 
   // start a new HTTP server on port 8080 with our service actor as the handler
   IO(Http) ! Http.Bind(httpActor, interface = "localhost", port = 8080)

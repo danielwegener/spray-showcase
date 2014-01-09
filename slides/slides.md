@@ -74,8 +74,26 @@ Spray is
 
 ### spray-routing
 
-* routing
+* Routes
+* Directives
 
+<!-- click -->
+```
+package spray
+
+import shapeless._
+
+package object routing {
+
+  type Route = RequestContext ⇒ Unit
+  type RouteGenerator[T] = T ⇒ Route
+  type Directive0 = Directive[HNil]
+  type Directive1[T] = Directive[T :: HNil]
+  type PathMatcher0 = PathMatcher[HNil]
+  type PathMatcher1[T] = PathMatcher[T :: HNil]
+
+}
+```
 
 
 
