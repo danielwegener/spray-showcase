@@ -18,6 +18,14 @@ object Build extends Build {
     .settings(formatSettings: _*)
     .settings(libraryDependencies ++= sprayWithAkkaDependencies)
 
+  lazy val `spray-client-example` = project
+    .settings(formatSettings: _*)
+    .settings(libraryDependencies ++= (sprayWithAkkaDependencies ++ Seq(
+    "io.spray"  %   "spray-client"  % sprayV withSources(),
+    "com.typesafe.akka"                       %%  "akka-slf4j"                  % "2.1.4",
+    "ch.qos.logback"                          %   "logback-classic"             % "1.0.13"
+  )))
+
   lazy val slides = project
     //todo: add grunt plugin
     //.settings(SbtGruntTask.gruntTaskSettings)

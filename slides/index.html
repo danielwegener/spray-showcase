@@ -64,10 +64,14 @@
 					<p>
 						<small>by <a >Daniel Wegener</a></small>
 					</p>
+
 				</section>
-                <section data-markdown="slides.md" data-separator="^<!-- click -->" data-vertical="^\n\n"></section>
+                <section data-markdown="slides.md" data-separator="^<!-- click -->" data-vertical="^<!-- down -->" data-notes='^Notes:'></section>
 				<section>
 					<h1>Thanks</h1>
+                    <p class="fragment">
+                        Slides & examples at <br /> <a href="https://github.com/danielwegener/spray-showcase">https://github.com/danielwegener/spray-showcase</a>
+                    </p>
 				</section>
 
 			</div>
@@ -84,13 +88,14 @@
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: true,
-				progress: false,
+				progress: true,
 				history: true,
 				center: true,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
-                transitionSpeed: 'fast',
+
+                transitionSpeed: 'slow',
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
