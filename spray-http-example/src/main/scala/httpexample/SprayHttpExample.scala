@@ -30,7 +30,7 @@ class MyHttpActor extends Actor with ActorLogging {
 
     case r @ HttpRequest(method, uri, headers, entity, httpProtocol) ⇒
       log.info(r.toString)
-      sender ! HttpResponse(status = StatusCodes.OK, entity = HttpEntity("Hello spray"))
+      sender ! HttpResponse(status = StatusCodes.OK, entity = HttpEntity(s"Hello from spray at $uri"))
   }
 }
 

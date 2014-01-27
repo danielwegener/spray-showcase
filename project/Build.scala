@@ -8,7 +8,11 @@ object Build extends Build {
 
 
   lazy val root = project.in(file("."))
-    .aggregate(`spray-http-example`, `spray-routing-example`, slides)
+    .aggregate(`spray-http-example`, `spray-routing-example`, slides, `spray-tcp-server-example`)
+
+  lazy val `spray-tcp-server-example` = project
+    .settings(formatSettings: _*)
+    .settings(libraryDependencies ++= sprayWithAkkaDependencies)
 
   lazy val `spray-http-example` = project
     .settings(formatSettings: _*)

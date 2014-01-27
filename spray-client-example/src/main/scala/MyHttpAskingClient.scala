@@ -18,8 +18,6 @@ object MyHttpAskingClient extends App {
   // similar to ask-pattern: actorRef ? message  
   val result: Future[HttpResponse] = pipeline(Get("http://www.google.com/?q=the+answer"))
 
-  PipelineStage
-
   result andThen {
     case Success(HttpResponse(StatusCodes.OK, _, _, _)) ⇒ log.info("yay google is alive")
     case Success(responseWithUnexpectedStatus)          ⇒ log.info(s"atleast a server reply: $responseWithUnexpectedStatus")
